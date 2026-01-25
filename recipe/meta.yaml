@@ -1,5 +1,5 @@
 {% set name = "string2string" %}
-{% set version = "0.0.150" %}
+{% set version = "0.0.152" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/string2string-{{ version }}.tar.gz
-  sha256: c9773ff0449aadc4a8a5dd48a8448b536f38cb5564820a4ad98b39a12e805bfc
+  sha256: 40a5b5fd01a0dcc42cc132fb431b0086bd3d73a123db25bcbdf315d7a0c55d78
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
