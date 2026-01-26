@@ -25,11 +25,14 @@ requirements:
     - numpy
     - transformers
     - datasets
-    - faiss-cpu ==1.7.3
+    - faiss-cpu
     - bert_score
     - fasttext
     - pandas
     - joblib
+    - sacrebleu
+    - rouge-score
+    - networkx
 
 test:
   source_files:
@@ -37,10 +40,12 @@ test:
   imports:
     - string2string
   commands:
+    - pip check
     - pytest -vvv --capture=tee-sys tests/test_alignment.py
     - pytest -vvv --capture=tee-sys tests/test_distance.py
     - pytest -vvv --capture=tee-sys tests/test_search.py
   requires:
+    - pip
     - pytest
     - python {{ python_min }}
 
