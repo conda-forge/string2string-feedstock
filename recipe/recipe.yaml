@@ -41,7 +41,8 @@ tests:
   - python:
       imports:
         - string2string
-      pip_check: true
+      # pip check doesn't work with faiss-cpu
+      pip_check: false
       python_version: ${{ python_min }}.*
   - files:
       source:
